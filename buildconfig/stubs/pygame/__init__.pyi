@@ -591,7 +591,7 @@ from pygame import surflock as surflock
 from pygame import sysfont as sysfont
 from pygame import threads as threads
 
-from ._common import _AnyPath
+from ._common import AnyPath
 
 # These classes are auto imported with pygame, so I put their declaration here
 from .rect import Rect
@@ -618,14 +618,14 @@ def set_error(error_msg: str) -> None: ...
 def get_sdl_version() -> Tuple[int, int, int]: ...
 def get_sdl_byteorder() -> int: ...
 def encode_string(
-    obj: Optional[_AnyPath],
+    obj: Optional[AnyPath],
     encoding: Optional[str] = "unicode_escape",
     errors: Optional[str] = "backslashreplace",
     etype: Optional[Type[Exception]] = UnicodeEncodeError,
 ) -> bytes: ...
 @overload
 def encode_file_path(
-    obj: Optional[_AnyPath], etype: Optional[Type[Exception]] = UnicodeEncodeError
+    obj: Optional[AnyPath], etype: Optional[Type[Exception]] = UnicodeEncodeError
 ) -> bytes: ...
 @overload
 def encode_file_path(
